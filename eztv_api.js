@@ -91,8 +91,8 @@ exports.getAllEpisodes = function(data, cb) {
             var entry = $(this);
             var title = entry.children('td').eq(1).text();
             var magnet = entry.children('td').eq(2).children('a').first().attr('href');
-            var matcher = title.match(/S([0-9]+)E([0-9]+)/);
-            if(!matcher) matcher = title.match(/([0-9]+)x([0-9]+)/);
+            var matcher = title.match(/S0?([0-9]+)E0?([0-9]+)/);
+            if(!matcher) matcher = title.match(/0?([0-9]+)x0?([0-9]+)/);
             if(matcher) {
                 var season = matcher[1];
                 var episode = matcher[2];
